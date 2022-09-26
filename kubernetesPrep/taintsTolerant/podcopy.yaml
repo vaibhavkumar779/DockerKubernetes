@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-check-4
+spec:
+  containers:
+  - image: coolgourav147/nginx-custom
+    name: container-check
+  tolerations:
+  - effect: "NoSchedule"
+    key: "mysize"
+    operator: "Exists"
