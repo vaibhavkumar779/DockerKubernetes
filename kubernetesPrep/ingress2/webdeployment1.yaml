@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: app-and-db
+  name: my-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-and-db
+  template:
+    metadata:
+      labels:
+        app: app-and-db
+    spec:
+      containers:
+      - name: app
+        image: nginx
+        ports:
+        - containerPort: 80
+      - name: db
+        image: mysql
+        ports:
+        - containerPort: 3306

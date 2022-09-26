@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: headless-service
+spec:
+  selector:
+    app: mysql
+  ClusterIP: None
+  ports:
+  - name: name-of-the-port
+    protocol: TCP
+    port: 80
+    targetPort: 8080
