@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world-app-deployment
+  name: hello-world-app-deployment-2
   labels:
-    app: hello-world-app
+    app: hello-world-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-world-app
+      app: hello-world-app-2
   template:
     metadata:
       labels:
-        app: hello-world-app
+        app: hello-world-app-2
     spec:
       containers:
-      - image: gcr.io/google-samples/hello-app:1.0
+      - image: gcr.io/google-samples/hello-app:2.0
         imagePullPolicy: IfNotPresent
         name: hello-world-app
         ports:
